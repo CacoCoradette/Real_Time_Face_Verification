@@ -1,0 +1,10 @@
+av==9.2.0
+h5py==3.1.0
+keras==2.9.0
+keras_nightly==2.5.0.dev2021032900
+numpy==1.19.5
+opencv_python_headless
+pandas==1.2.4
+streamlit
+streamlit_webrtc==0.43.2
+tensorflow==2.5.0
