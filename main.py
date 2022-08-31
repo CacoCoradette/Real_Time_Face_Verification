@@ -76,7 +76,7 @@ class VideoProcessor:
 
 
 st.subheader('The App')
-image = cv2.imread('sammple.JPG')
+image = cv2.imread('sample.JPG')
 st.image(image)
 # streamlit-webrtc requires callbacks to process image and audio frames which is one major
 # difference between OpenCV GUI and streamlit-webrtc
