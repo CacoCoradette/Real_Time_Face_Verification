@@ -22,9 +22,9 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 class VideoProcessor:
     def __init__(self) -> None:
         self.iter = np.zeros((1,128))
-        self.stri = 'face not visible'
+        self.stri = 'Not In DataBase'
     def recv(self, frame):
-        alpha = 0.2
+        alpha = 0.15
         frm = frame.to_ndarray(format='bgr24')
         img = frm
         # face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
