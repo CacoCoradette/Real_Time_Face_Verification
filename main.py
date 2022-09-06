@@ -32,28 +32,33 @@ class VideoProcessor:
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
         
         if len(faces)!=0:
+            i=0
             for (x,y,w,h) in faces:
-                cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
-                roi_color = img[y:y+h, x:x+w]
-                img = cv2.resize(roi_color, (96,96), interpolation=cv2.INTER_LINEAR)
-                img = img[...,::-1]
-                img = np.around(np.transpose(img, (0,1,2))/255.0, decimals=12)
-                x_train = np.array([img])
-                encoding_orig =model.predict_on_batch(x_train)
-                encoding = alpha*self.iter + (1-alpha)*encoding_orig
-                min_dist = 100
-                for (name, db_enc) in database.items():
-                    dist = np.linalg.norm(encoding-db_enc)
-                    if dist < min_dist:
-                        min_dist = dist
-                        identity = name[0:name.find('__')]
-                        # min_enc = encoding
-                    if min_dist > 0.4:
-                        # stri = 'Not in DB'
-                        continue
-                    else:
-                        dist = dist
-                        self.stri = identity
+                if i = 1 :
+                    break
+                else :
+                        i=1
+                        cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+                        roi_color = img[y:y+h, x:x+w]
+                        img = cv2.resize(roi_color, (96,96), interpolation=cv2.INTER_LINEAR)
+                        img = img[...,::-1]
+                        img = np.around(np.transpose(img, (0,1,2))/255.0, decimals=12)
+                        x_train = np.array([img])
+                        encoding_orig =model.predict_on_batch(x_train)
+                        encoding = alpha*self.iter + (1-alpha)*encoding_orig
+                        min_dist = 100
+                        for (name, db_enc) in database.items():
+                            dist = np.linalg.norm(encoding-db_enc)
+                            if dist < min_dist:
+                                min_dist = dist
+                                identity = name[0:name.find('__')]
+                                # min_enc = encoding
+                            if min_dist > 0.4:
+                                # stri = 'Not in DB'
+                                continue
+                            else:
+                                dist = dist
+                                self.stri = identity
 
         cv2.rectangle(frm, (0,0),(frm.shape[1],40),(255,255,255),-1)
         cv2.putText(frm, self.stri, (int(frm.shape[1]/2),20), font, .5, (0, 0, 0),2)
