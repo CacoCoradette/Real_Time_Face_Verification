@@ -34,7 +34,7 @@ class VideoProcessor:
         if len(faces)!=0:
             i=0
             for (x,y,w,h) in faces:
-                if i = 1 :
+                if i == 1 :
                     break
                 else :
                         i=1
