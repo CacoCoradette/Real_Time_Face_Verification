@@ -9,9 +9,6 @@ import tensorflow as tf
 # Image Processing Libraries
 import cv2
 
-# Library for downloading model from google drive
-import gdown
-
 # Library for mathematical operations on multidimensional arrays
 import numpy as np
 
