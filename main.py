@@ -169,7 +169,7 @@ with header:
     st.title('Real Time Face Recognition')
     st.markdown("""---""")
 
-    st.write("Face recognition is a 1:K way of identifying or confirming an individual's identity using their face . Facial Recognition systems can be used to identify photos, videos, or in real time. It has applications in mobile security system, Airport Immigration services, Attendence system, and many more ways.")
+    st.write("Face recognition is a 1-K way of identifying or confirming an individual's identity using their face . Facial Recognition systems can be used to identify photos, videos, or in real time. It has applications in mobile security system, Airport Immigration services, Attendence system, and many more ways.")
     st.markdown("""---""")
 
 # with app:
